@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="images/hawk_logo.png">
+
+    <title>UHCL Shuttle</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrapValidator.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-amber.min.css"/>
+       <link href="css/animate.css" rel="stylesheet">
+   <!-- <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://uhcl-shuttle-app.firebaseapp.com/">UHCL Shuttle</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="https://uhcl-shuttle-app.firebaseapp.com/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="javascript:void(0)" id="sign-in-button"><span id="account">Sign In</span></a></li>
+             <li class="dropdown"><a href="javascript:void(0)" id="account-menu-button"></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+   
+      <div class="starter-template">
+        <div class="container">
+            
+            <div id="action-handler"> <!-- Start of Action handler -->
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="row">
+                            <div class="card col-md-12 "> <!-- Card starts here -->
+                                <div class="row">
+                                    <div id="card-header" class="card-header text-center col-md-12">- Action Handler Page -</div>
+                                </div>
+                                <div class="card-block">
+                                    <div id="action-handler-form"> <!-- Custom action handler -->
+                                 
+                                        <div class="row card-body">
+                                           <p id="action-handler-info" class="center">This is UHCL App email action handler page.</p>
+                                                <form id="verify-password-div" class="col-md-12">
+                                                    <h5>Change Password</h5>
+                                                    <input type="text" id="verify-password-email-input" class="form-control transparent-input" name="verify-password-email-input" disabled>  
+                                                    <div id="verify-password-input-mdl-textfield">
+                                                        <input type="password" id="verify-password-input" class="form-control transparent-input" name="verify-password-input"
+                                                        placeholder="Enter New Password" required autofocus>   
+                                                    </div>
+                                                </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row card-body">
+                                    <div class="card-footer text-muted col-md-12">
+                                        <div class="row">
+                                            <div id="ack-actions-div" class="col-md-12">
+                                                <a id="home-button" href="https://uhcl-shuttle-app.firebaseapp.com/">Home</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- Card ends --> 
+                        </div>
+                    </div>
+                </div> 
+         </div> <!-- End of Action-handler-card -->
+            
+                      <!--Toast Messages Markup -->
+    <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+            <!-- The actual Snackbar 
+           <div id="alert-snackbar" class=" alert animated fadeInUp" style="display: none;">
+            </div>-->
+        </div>    
+      </div>
+
+              
+      
+      
+      <footer class="footer">
+        <p class="text-muted">University of Houston, Clear-Lake</p>
+        <p id="text1">&#64;Abhishek B.</p>
+
+    </footer>
+    
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/bootstrapValidator.min.js"></script> 
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+   
+<script src="js/indexFirebase.js"></script> 
+      
+<!-- Snackbar JS -->
+
+  </body>
+</html>

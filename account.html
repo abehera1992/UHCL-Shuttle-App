@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="images/hawk_logo.png">
+
+    <title>UHCL Account</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrapValidator.min.css" rel="stylesheet">
+       <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-amber.min.css"/>
+      <link href="css/animate.css" rel="stylesheet">
+   <!-- <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://uhcl-shuttle-app.firebaseapp.com/">UHCL Shuttle</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="https://uhcl-shuttle-app.firebaseapp.com/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="javascript:void(0)" id="sign-in-button"><span id="account">Sign In</span></a></li>
+           <li class="dropdown"><a href="javascript:void(0)" id="account-menu-button"></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+   
+      <div class="starter-template">
+        <div class="container">
+         <div id="account-card"> <!-- Start of Account-card -->
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="row">
+                        <div class="card col-md-12" style="margin:20px;">
+                            <div class="row">
+                                <div id="card-header" class="card-header text-center col-md-12">- My Account -</div>
+                            </div>
+                            <div class="card-block">
+                                <div id="pwd-users-only-div"> <!-- Only password based users see this -->
+                                    <div class="row card-body">
+                                        <form id="account-reset-div" class="col-md-12">
+                                            <div id="new-email-input-mdl-textfield" class="form-inline">
+                                                <input type="email" id="new-email-input" class="form-control transparent-input" name="email" placeholder="New E-mail Address" required autofocus>  
+                                                <button id="new-email-submit-button" type="button" class="btn btn-link" disabled>Submit</a>
+                                            </div>
+                                        </form>
+                                        <button id="new-password-submit-button" class="btn btn-primary">Reset Password</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row card-body">
+                                <div class="card-footer text-muted col-md-12">
+                                    <div class="row">
+                                        <div id="registerButtons" class="col-md-12">
+                                            <a id="home-button" href="login">Home</a>
+                                            <button id="delete-account-button" type="button" class="btn btn-default"><i class="fa fa-trash fa-lg"></i>Delete Account</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div> 
+         </div> <!-- End of Account-card -->
+        
+                          <!--Toast Messages Markup -->
+    <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+         
+      <!-- The actual Snackbar 
+           <div id="alert-snackbar" class=" alert animated fadeInUp" style="display: none;">
+            </div> -->
+            
+         <!-- Snackbar ends -->
+        </div>    
+      </div>
+      
+      <footer class="footer">
+        <p class="text-muted">University of Houston, Clear-Lake</p>
+        <p id="text1">&#64;Abhishek B.</p>
+
+    </footer>
+    
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+     
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/bootstrapValidator.min.js"></script> 
+          <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+          <script src="js/indexFirebase.js"></script> 
+  </body>
+</html>
+<!--pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@uhcl\.edu$"--> 

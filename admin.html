@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="images/hawk_logo.png">
+
+    <title>UHCL Shuttle</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bootstrap-timepicker/css/bootstrap-timepicker.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <link href="bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-amber.min.css"/>
+   <!-- <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/moment.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="bootstrap-datetimepicker-master/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+   
+     
+
+      
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://uhcl-shuttle-app.firebaseapp.com/">UHCL Shuttle</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="https://uhcl-shuttle-app.firebaseapp.com/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="javascript:void(0)" id="sign-in-button"><span id="account">Sign In</span></a></li>
+            <li class = "dropdown"><a href="javascript:void(0)" id="account-menu-button"></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+   
+      
+       
+      <div class="starter-template">
+        <div class="container">
+            <div class="row">
+                <div id="admin-card" class="col-md-10 col-sm-offset-3">
+                <div class="panel panel-primary panel-transparent col-md-8">
+                <div class="panel-heading">- Admin Login -</div>
+                    <div id="admin-panel-body" class="panel-body">
+                      
+                            <div id="admin-settings">
+                                <div id="admin-login-card">  <!-- admin card starts -->
+                                <div class="row">
+                                    <h6 id="admin-h6" class="col-xs-12">Select type of message broadcasting.</h6>
+                                <label for="messageTypeLabel" id="messageTypeLabel" class="col-md-6 col-md-offset-4 control-label">Message type:</label>
+                                <!-- Split button -->
+                                        <div class="btn-group col-md-5" id="admin-btn-grp">
+                                          <button type="button" id="admin-select-type" class="btn btn-default nohover">Select Type<i id="admin-icon1" class="glyphicon glyphicon-arrow-right"></i></button>
+                                          <button type="button" id="admin-toggle-select" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                          </button>
+                                          <ul id="admin-ul-dropdown-menu" class="dropdown-menu animated fadeInUp">
+                                            <li class="admin-list"><a id="start-service" data-toggle = "collapse" data-target="#start-service-card">Start Service</a></li>
+                                            <li class="admin-list"><a id="suspend-service" data-toggle = "collapse" data-target="#suspend-service-card">Suspend Service</a></li>
+                                            <li class="admin-list"><a id="temp-shutdown" data-toggle = "collapse" data-target="#temporary-service-outage-card">Temporary Shutdown</a></li>
+                                            <li role="separator" id="separator" class="divider"></li>
+                                            <li class="admin-list"><a id="custom-service" data-toggle = "collapse" data-target="#custom-service-card">Custom Service Message</a></li>
+                                          </ul>
+                                        </div>
+                                    </div>
+                                </div> <!-- admin-login-card ends here  -->
+                                
+                                <div id="start-service-card" class="collapse">   <!-- start-service-card starts here -->
+                                        <div class="row">
+                                            <div id="location-input-section " class="col-xs-5 col-xs-offset-1">
+                                                <div class="inputGroupContainer">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i></span>
+                                                         <select class="form-control input-small" id="location-input" required autofocus>
+                                                            <option selected="selected">SSCB Parking</option>
+                                                            <option>Kissing-Stones Stop</option>
+                                                            <option>Arbor Parking</option>
+                                                            <option>Delta Parking</option>
+                                                            <option>UFA</option>
+                                                            <option>Ivy Apt</option>
+                                                            <option>Cove Apt</option>
+                                                            <option>Lakeshore Apt</option>
+                                                         </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-5">
+                                                   <div class="inputGroupContainer">
+                                                          <div class="input-group bootstrap-timepicker timepicker">
+                                                            <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span><input id="timepicker-location" type="text" class="form-control input-small" required>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                      </div>
+                                      <div class="row">
+                                        <div id="start-service-card-display" class="col-md-12">
+                                            <p id="start-service-display"> </p>
+                                        </div>
+                                          
+                                      </div>
+                                </div> <!-- start-service-card ends here -->
+                                <div id="suspend-service-card" class="collapse"> <!-- suspend-service-card starts here -->
+                                    <div class="row">
+                                        <div id="calender-suspend" class="col-sm-8 col-sm-offset-2">
+                                          
+                                                <div class="input-group" >
+                                                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                                      <input id="datepicker" class="form-control form-control-sm date" placeholder="MM/DD/YYY" data-date-format="dd-mm-yyyy" type="text" required>
+                                                </div>
+                                          
+                                        </div>
+                                    </div>
+                                      <div class="row">
+                                        <div id="suspend-service-card-display" class="col-md-12">
+                                            <p id="suspend-service-display">The service is suspended for today i.e.  </p>
+                                        </div>
+                                      </div>
+                                </div>
+                                </div> <!-- suspend-service-card ends!  -->
+                        
+                        
+                               <div id="temporary-service-outage-card" class="collapse">   <!-- Temporary-service-card starts here -->
+                                        <div class="row">
+                                            <div id="calender-time-range" class="col-xs-5 col-xs-offset-1">
+                                                   <div class="form-group">
+                                                        <div class='input-group date' id='datetimepicker1'>
+                                                            <input type='text' class="form-control" placeholder="MM/DD/YYY" />
+                                                            <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-5">
+                                                   <div class="form-group">
+                                                    <div class='input-group date' id='datetimepicker2'>
+                                                        <input type='text' class="form-control" placeholder="MM/DD/YYY" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                      </div>
+                                      <div class="row">
+                                        <div id="service-outage-card-display" class="col-md-12">
+                                            <p id="service-outage-display"> </p>
+                                        </div>
+                                      </div>
+                                </div> <!-- Temporary-outage-service-card ends here -->
+                        
+                                <div id="custom-service-card" class="collapse"> <!-- custom-service-card starts here -->
+                                    <div class="row">
+                                        <div id="custom-textarea" class="col-md-8 col-md-offset-2">
+                                            <div class="input-group" >
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
+                                                <input id="custom-input-textarea" class="form-control col-sm-10" placeholder="Enter custom message to be sent" aria-describedby="sizing-addon2" type="text" required>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                      <div class="row">
+                                        <div id="cutom-card-display" class="col-md-12">
+                                            <p id="custom-display"></p>
+                                        </div>
+                                      </div>
+                                </div><!-- custom-service-card ends here -->
+                                
+                        
+                                <div class="row">
+                                            <div id="admin-section-buttons" class="col-sm-12 ">
+                                                <button id="send-button" type="button" class="btn btn-primary">SEND</button>
+                                                <button id="cancel-button" type="button" class="btn btn-primary">CANCEL</button>
+                                            </div>
+                                </div>
+                      
+                                
+           
+                    
+                      
+                
+            </div>   <!-- Admin-settings ends here   -->
+        </div> <!-- End of Panel panel-primary panel-transparent -->
+    </div> <!--End of Login-card -->
+</div>   
+              <!--Toast Messages Markup -->
+    <div id="toast"  class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text" ></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+            
+            
+            <!-- The actual Snackbar 
+           <div id="alert-snackbar" class=" alert animated fadeInUp" style="display: none;"></div> -->
+        </div>    
+      </div>
+      
+
+      
+      <footer class="footer">
+        <p class="text-muted">University of Houston, Clear-Lake</p>
+        <p id="text1">&#64;Abhishek B.</p>
+
+    </footer>
+          
+<script type="text/javascript">
+  var startServiceDisplay = document.getElementById("start-service-display");
+  var cancelButton = document.getElementById("cancel-button");
+  var startService = document.getElementById("start-service");
+  var suspendServiceDisplay = document.getElementById("suspend-service-display");
+  var suspendService = document.getElementById("suspend-service");
+  var serviceOutageDisplay = document.getElementById("service-outage-display");
+  var temporaryShutdown = document.getElementById("temp-shutdown");
+  var customDisplay = document.getElementById("custom-display");
+  var customService = document.getElementById("custom-service");
+    
+    //ADMIN PAGE JS-----------------------------------------------------------------------------------------------------------------------------
+    
+             
+         
+         //START-SERVICE-CARD JS-----------------------------------------------------------------------------------------------------------
+            $('#timepicker-location').timepicker({
+                template: 'dropdown',
+                maxHours: 24,
+                minuteStep: 1,
+                defaultTime: 'current'
+            });
+            
+            $(document).ready(function(){
+                var location = $("#location-input");
+                var time = $("#timepicker-location");
+              
+                $('#location-input, #timepicker-location').change(function(){
+                    startServiceDisplay.style.display = "inline";
+                   startServiceDisplay.innerHTML='The service starts from ' + location.val() + ' at ' + time.val() + ' .'; 
+                });
+                
+                $(document).keyup(function(e) {
+            
+                if (e.keyCode == 27) { // escape key maps to keycode `27`
+                // <DO YOUR WORK HERE>
+                $(startServiceDisplay).empty();
+                $('#location-input option').prop('selected', function() {
+                    return this.defaultSelected;
+            });
+                    
+            } 
+   
+            });
+    });
+    cancelButton.addEventListener("click", function(){
+                    $(startServiceDisplay).empty();
+                    $('#location-input option').prop('selected', function() {
+                            return this.defaultSelected;
+                });
+         });
+         
+         
+    startService.addEventListener("click", function(){
+       setTimeout(function() {
+            $('#start-service-card').fadeOut('slow');
+        }, 60000); 
+    });
+         
+         //START-SERVICE-CARD JS ENDS ----------------------------------------------------------------------------------------------------
+      
+         
+         //SUSPEND SERVICE-CARD JS STARTS ------------------------------------------------------------------------------------------------
+ $(document).ready(function(){
+     var suspendDate = $("#datepicker");
+      $('#datepicker').datepicker({
+          format: 'mm/dd/yyyy',
+          autoclose: true,
+          keyboardNavigation: true,
+          clearBtn: true,
+          todayHighlight: true
+          
+        }); 
+     
+     $('#datepicker').change(function(){
+         suspendServiceDisplay.style.display = "inline";
+         suspendServiceDisplay.innerHTML = 'The Uhcl Shuttle service is suspended for the day i.e. '+ suspendDate.val() +'. Sorry for any inconvenience caused.';
+     });
+     
+         $(document).keyup(function(e) {
+            
+                if (e.keyCode == 27) { // escape key maps to keycode `27`
+                // <DO YOUR WORK HERE>
+                $("#datepicker").datepicker('clearDates', 'none');
+                $(suspendServiceDisplay).empty();
+                    
+            } 
+   
+            });
+    });
+         
+        cancelButton.addEventListener("click", function(){
+                $("#datepicker").datepicker('clearDates', 'none');
+                $(suspendServiceDisplay).empty();
+        });
+         
+        suspendService.addEventListener("click", function(){
+            setTimeout(function() {
+                $('#suspend-service-card').fadeOut('slow');
+            }, 60000); 
+        });   
+         
+         
+//SUSPEND SERVICE-CARD JS ENDS-------------------------------------------------------------------------------------------------------------
+         
+//TEMPORARY-SERVICE-OUTAGE-CARD-STARTS-----------------------------------------------------------------------------------------------------
+         
+         $(document).ready(function(){
+                $('#datetimepicker1').datetimepicker();
+                $('#datetimepicker2').datetimepicker({
+                        useCurrent: false //Important! See issue #1075
+                }); 
+                $("#datetimepicker1, #datetimepicker2").on("dp.change", function (e) {
+//                        $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+//                        $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+                        var dayTimePicker1 = $('#datetimepicker1');
+                        var dayTimePicker2 = $('#datetimepicker2');
+                        serviceOutageDisplay.style.display = 'inline';
+                        serviceOutageDisplay.innerHTML = 'The Uhcl shuttle service will be down from '+ dayTimePicker1.find("input").val()+ ' to '+ dayTimePicker2.find("input").val() + ' .Sorry for the inconvenience caused.';
+                    
+                    
+                      $(document).keyup(function(e) {
+            
+                            if (e.keyCode == 27) { // escape key maps to keycode `27`
+                            // <DO YOUR WORK HERE>
+                            $("#datetimepicker1").data("DateTimePicker").clear();
+                            $("#datetimepicker2").data("DateTimePicker").clear();
+                            $(serviceOutageDisplay).empty();
+                    
+                        }    
+   
+                    });
+                });
+            });
+         
+        cancelButton.addEventListener("click", function(){
+                            $("#datetimepicker1").data("DateTimePicker").clear();
+                            $("#datetimepicker2").data("DateTimePicker").clear();
+                            $(serviceOutageDisplay).empty();
+            });
+         
+        temporaryShutdown.addEventListener("click", function(){
+            setTimeout(function() {
+                $('#temporary-service-outage-card').fadeOut('slow');
+            }, 60000); 
+        }); 
+         
+//TEMPORARY-SERVICE-OUTAGE-CARD-ENDS-----------------------------------------------------------------------------------------------------
+         
+//CUSTOM-SERVICE-CARD-STARTS-------------------------------------------------------------------------------------------------------------
+         
+         $(document).ready(function(){
+            var customInputTextarea = $("#custom-input-textarea");
+             $("#custom-input-textarea").change(function(){
+                customDisplay.style.display = "inline";
+                customDisplay.innerHTML = customInputTextarea.val();
+             });
+             
+               $(document).keyup(function(e) {
+            
+                if (e.keyCode == 27) { // escape key maps to keycode `27`
+                // <DO YOUR WORK HERE>
+                $('#custom-input-textarea').val("");
+                $(customDisplay).empty();
+                }
+               });
+                    
+         });
+         cancelButton.addEventListener("click", function(){
+               $('#custom-input-textarea').val("");
+                $(customDisplay).empty();
+         });
+         customService.addEventListener("click", function(){
+             setTimeout(function(){
+                $('#custom-service-card').fadeOut('slow'); 
+             }, 60000);
+         });
+    
+    //ADMIN PAGE JS ENDS------------------------------------------------------------------------------------------------------------------------
+      
+      
+</script>
+ 
+    
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+       
+        <script src="js/indexFirebase.js"></script>   
+           
+          
+   
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+   
+<!--<script src="js/indexFirebase.js"></script> -->
+      
+  </body>
+</html>
+

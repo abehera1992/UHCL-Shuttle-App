@@ -1,0 +1,627 @@
+
+body {
+  padding-top: 50px;
+  width:100%;
+  height: 100%;
+  margin-left: 0;
+  background-image: url(../images/bus2.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size:cover;
+  -o-background-size: cover;
+  background-size:cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: hsla(0, 0%, 75%, 0.7);
+  background-blend-mode: ;
+  display: block;
+  position:static;
+  background-color: transparent;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  
+}
+
+.clear{
+    clear:both;
+}
+#account-menu-button {
+    text-transform: capitalize;
+    display:none;
+}
+
+.starter-template {
+/*  padding: 20px 5px 1100px 5px;*/
+  text-align: center;
+  width: 100%;
+/*
+  height: 100%;
+  margin-left: 0;
+   background-image: url(../images/bus2.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+     background-size:cover;
+     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: hsla(0, 0%, 75%, 0.7);
+    background-blend-mode: soft-light;
+    display: block;
+    position:static;
+*/
+    
+}
+#login-card {
+
+}
+.panel{
+    border:none;
+    border-radius: 20px;
+    margin-top: 20px;
+
+}
+.panel-transparent {
+	background: none;
+}
+.panel-primary .panel-heading{
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    background-color: #e8cc30;
+    color: black;
+    border-bottom-color: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /*background: rgba(122, 130, 136, 0.2)!important; *//*for making panel heading transparent!!!*/
+
+}
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.2)!important; /*for making panel body transparent!!!*/
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.col-md-4 col-md-offset-1{
+    padding:10px 30px;
+    /*border-right: 1px solid wheat;*/
+}
+
+
+.navbar-inverse{
+    background-color:#e8cc30;
+    opacity: 1;
+    border-color:aliceblue;
+}
+.navbar-inverse .navbar-brand{
+    color:black;
+    font-weight:bold;
+    font-size:30px;
+    font-family: "Times New Roman", Georgia, sans-serif;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus{
+    color: black;
+    background-color:bisque;
+    font-size:18px;
+    
+} 
+.navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: #e8cc30;
+   
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:black;
+    font-size: 18px;
+}
+h1{
+    font-weight: normal;
+    text-align: center;
+    font-size: 40px;
+    color: #31751e;
+}
+h4{
+    color: cadetblue;
+    font-weight: normal;
+    font-size:20px;
+}
+.col-sm-12 {
+	padding: 0;
+}
+
+#loginSection{
+    
+    padding: 5px 30px 5px 30px;
+   margin-bottom: 5px;   
+    
+}
+
+
+#loginSection input[type="email"], #loginSection input[type="password"]{
+	font-size:13px;
+    padding-left: 5px;
+}
+#login-section-buttons {
+	margin-bottom: 5px;
+}
+#login-button {
+	padding: 6px 18px;
+}
+.center{
+    font-size: 15px;
+    color:#917514;
+    font-weight: 700;
+}
+#socialLoginSection {
+	    
+        padding:5px;
+        margin-top:5px;
+}
+
+#facebook-button {
+	padding: 5px 20px 5px 10px;
+    font-family: 'arial', serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: cornflowerblue;
+}
+#google-button.btn.btn-google.oauth-login-button{
+	padding: 5px 18px;
+    font-family: 'arial', serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #DB4437;
+    
+}
+.fa-facebook {
+	margin: 0 10px 0 0;
+   color:aliceblue;
+    padding-left: 5px;
+}
+
+.fa-google-plus {
+	margin: 0 6px 0 0;
+    color:aliceblue;
+}
+#form-fields {
+	margin-top: 20px;
+}
+.col-sm-12 input[type="email"], .col-sm-12 input[type="password"] {
+    font-size:15px;
+    padding: 3px 10px;
+    display: block;
+}
+#facebook {
+	padding: 5px 20px;
+    font-weight: 20%;
+    
+}
+
+
+.btn {
+    color:black;
+    background-color: #e8cc30;
+    border-radius: 8px;
+    font-family: "Arial", Times;
+    font-size: 12px;
+}
+.btn: hover{
+    text-decoration: none;
+}
+
+/*Register card */
+#register-card {
+	display: none;
+   
+}
+
+#card-header{
+    background-color: #e8cc30;
+    
+}
+
+.card {
+	border: 2px solid black;
+     background: rgba(46, 51, 56, 0.3) !important;
+    border-radius: 20px;
+    
+}
+
+
+.card-header {
+	padding: 10px 0;
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#formRegister {
+    margin: 20px 0 20px 0;
+}
+#display-name {
+	margin-top: 8px;
+}
+#phone {
+	margin-top: 8px;
+}
+#registration-input-password {
+	margin-top: 8px;
+}
+#registration-input-password2 {
+	margin-top: 8px;
+}
+
+input.transparent-input {
+  border: none; !important
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+  box-shadow: none !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: #e8cc30;
+  font-size: 15px;
+}
+
+input.transparent-input:focus {
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(234, 187, 46, 0.6) !important;
+}
+
+
+.form-control::-moz-placeholder {
+  color: black;
+    font-size:13px;
+    font-weight: 500;
+
+}
+.form-control::-ms-input-placeholder {
+  color: black;
+     font-size:13px;
+    font-weight: 500;
+}
+.form-control::-webkit-input-placeholder {
+  color: black;
+     font-size:13px;
+    font-weight: 500;
+}
+
+.card-footer.text-muted{
+    padding-bottom: 13px;
+    border-top: 2px solid black;
+  
+}
+#registerButtons {
+	margin-top: 10px;
+}
+#back-button {
+	float: left;
+}
+#submit-button {
+	float: right;
+}
+
+/* End of Register-card section */
+
+/* Notice-card */
+
+#notice-card {
+	display: none;
+}
+#notice-card-h6{
+    margin: 30px 0 30px 0;
+    font-size: large;
+    font-family: "Arial", serif;
+    color: aliceblue;
+}
+
+#exit-button {
+	padding: 5px 20px 5px 20px;
+    font-size: 15px;
+    
+}
+
+/* End of Notice-card section */
+
+/* Logout-card */
+
+#logout-card {
+	display: none;
+}
+
+#logout-card-h6 {
+	margin: 30px 5px 30px 5px;
+    font-size: large;
+    font-family: "Arial", serif;
+    color: aliceblue;
+    line-height: 25px;
+}
+
+#home-Button {
+	padding: 5px 20px 5px 20px;
+    font-size: 15px;
+}
+
+/* End of Logout-card section */
+
+/* Account-card */
+
+#account-card {
+	
+}
+#pwd-users-only-div {
+	display: none;
+}
+#account-reset-div{
+     margin: 20px 0 20px 0;
+}
+
+#new-email-input{
+    padding: 0;
+    margin-right: 5px;
+}
+#new-email-submit-button {
+	padding: 5px 10px 5px 10px;
+    font-size: 15px;
+    font-family: 'Arial', serif;
+    color: antiquewhite;
+    margin-top: 5px;
+}
+#new-email-submit-button:hover {
+	text-decoration: none;
+}
+
+#new-password-submit-button {
+	
+    margin: 10px auto;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#home-button {
+	float: left;
+    margin-left: 5px;
+    margin-top: 8px;
+    color: #e8cc30;
+    font-family: 'Arial', serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+#delete-account-button {
+	float: right;
+    color: black;
+    font-family: 'Arial', serif;
+    font-size: 15px;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+.fa.fa-trash {
+	
+    margin-right:8px;
+}
+/* End of Account-card section */
+
+/* Action-handler */
+#action-handler {
+	
+}
+#verify-password-div {
+	display: none;
+}
+#action-handler-info{
+    font-size: 15px;
+    color: #f7d765;
+    font-family: 'Arial', serif;
+    font-weight: 400;
+    margin-top: 10px;
+}
+h5{
+    font-size: 18px;
+    font-weight: bold;
+    color: #e8cc30;
+}
+#verify-password-email-input {
+	background-color: transparent;
+    margin-bottom:5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #e8cc30;
+    
+}
+#verify-password-input-mdl-textfield{
+    margin-bottom: 10px;
+}
+
+#verify-password-submit-button {
+	float: right;
+    color: black;
+    font-family: 'Arial', serif;
+    font-size: 15px;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+/* End of Action-handler */
+
+/* Bootstrap Snackbar */
+
+
+#alert-snackbar {
+    
+    min-width: 400px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #996e24; /* Black background color */
+    color: antiquewhite; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 15px; /* Rounded borders */
+    padding: 10px 20px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 45%; /* Center the snackbar */
+    bottom: 40px; /* 30px from the bottom */
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+#alert-snackbar.show {
+    visibility: visible; /* Show the snackbar */
+}
+
+
+
+/* Snackbar Ends */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color:#e8cc30;
+    opacity: 1;
+}
+.text-muted{
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 20px;
+    color: black;
+}
+#text1{
+    font-weight: normal;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* ADMIN PAGE CSS START */
+
+/* Admin page */
+#admin-panel-body {
+	padding: 5px 10px;
+}
+#admin-h6 {
+	color: #e8cc30;
+    margin: 0;
+    padding-top: 0;
+    margin-bottom: 5px;
+    font-family: 'Arial', serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+#messageTypeLabel {
+	margin: 0;
+    padding: 5px 0 13px 3px;
+}
+#admin-btn-grp {
+	padding: 0;
+}
+#admin-select-type {
+	padding: 3px 30px 3px 30px;
+    border-color:#e8cc30;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 0;
+    font-family: 'Arial', serif;
+    font-size: 14px;
+}
+#admin-icon1 {
+	padding-left:5px;
+    padding-top: 1px;
+}
+#admin-select-type:hover {
+	cursor:not-allowed!important; 
+    background-color: #e8cc30;
+}
+#admin-toggle-select {
+	border-radius: 0;
+    border-color: #e8cc30;
+    padding: 4px 8px 5px 8px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 0px;
+}
+#admin-ul-dropdown-menu {
+	background-color:#f9f37f;
+}
+.admin-list {
+	
+    font-family: 'Arial', serif;
+    font-size: 13px;
+    
+}
+#separator {
+	background-color:black;
+}
+
+
+/* Admin page ends here */
+
+
+/* Start-service-card*/
+
+#start-service-card {
+	margin: 5px 0 10px 0;
+    
+}
+#start-service-card-display {
+	padding: 20px 15px 10px 15px;
+  
+}
+#start-service-display {
+	font-family: 'Arial', serif;
+    color: #e8cc30;
+    font-weight: 700;
+    display:none;
+}
+
+
+
+/* Start-service-card ends here */
+
+/* Suspend-service-card starts here */
+
+#suspend-service-card {
+	margin:10px 0 10px 0;
+}
+#suspend-service-card-display {
+	margin: 10px 0 10px 0;
+}
+#suspend-service-display{
+    font-family: 'Arial', serif;
+    color: #e8cc30;
+    font-size: 15px;
+    font-weight: 700;
+    display: none;
+}
+/* Suspend-service-card ends here */
+
+/* Service-outage-card*/
+
+#service-outage-display {
+    font-family: 'Arial', serif;
+    color: #e8cc30;
+    font-size: 15px;
+    font-weight: 700;
+   display: none;
+}
+
+/* Service-outage-card ends*/
+/* Custom-textarea-starts */
+#custom-textarea{
+	  padding: 15px 10 20px 10px;
+    margin-bottom: 15px;
+}
+#custom-display {
+	font-family: 'Arial', serif;
+    color: #e8cc30;
+    font-size: 15px;
+    font-weight: 700;
+    display: none;
+}
+  
+
+/* Custom-textarea-ends */

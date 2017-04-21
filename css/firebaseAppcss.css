@@ -1,0 +1,17 @@
+body{
+    padding-top: 50px;
+}
+.container{
+    margin-top: 100px;
+    padding: 30px 50px;
+    background-color: antiquewhite;
+    width: 30px;
+}
+#buttonRow {
+	position: relative;
+    top: 10px;
+    
+}
+/*#btnLogout {
+	display: none; !important
+}*/
