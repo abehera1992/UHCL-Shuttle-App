@@ -702,14 +702,18 @@ h5{
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-  overflow-y: hidden;
-  overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  
+   
 }
-
+.modal-content {
+	border-radius: 20px;
+}
 .closeContactUs{
-       position: absolute;
+    position: absolute;
     top: 15px;
     right: 35px;
     color: #f1f1f1;
@@ -727,6 +731,8 @@ h5{
 
 #contactUs-header{
     background-color: cadetblue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 #contactUs-h4 {
