@@ -43,7 +43,7 @@
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
                   <li><a id="teamButton" href="#">Team</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a id="contactButton" href="#">Contact</a></li>
                   <li><a href="javascript:void(0)" id="sign-in-button"><span id="account">Sign In</span></a></li>
                   <li><a href="javascript:void(0)" id="account-menu-button"></a></li>
                 </ul>
@@ -54,16 +54,56 @@
           <div class="inner cover">
             <h1 id="coverHeading" class="cover-heading">An app across browser</h1>
             <p id="coverSubHeading" class="lead animated bounceInLeft">Designed with love for easing your daily commute.</p>
-            <div class="btn-wrapper">
-              <a id="index-signup" class="btn btn-lg btn-default animated bounceIn">Sign Up</a>
-            </div>
-              <!-- The Modal -->
-                <div id="myModal" class="modal">
-                  <span class="close">&times;</span>
+                <div class="btn-wrapper">
+                    <a id="index-signup" class="btn btn-lg btn-default animated bounceIn">Sign Up</a>
+                </div>
+              <!-- The Team Modal -->
+                <div id="team-image-modal" class="modal">
+                  <span class="closeTeamModal">&times;</span>
                   <img src="images/bus2.jpg" class="modal-content" id="img01">
                   <div id="caption"></div>
                 </div>
-              <!-- The modal Ends -->
+              <!-- The Team modal Ends -->
+              
+              <!-- The contact us modal start-->
+              
+                  <div id="contact-us-modal" class="modal" style="text-align: left">
+                        <span class="closeContactUs">&times;</span>
+                        <div class="modal-content">
+                          <div id="contactUs-header" class="modal-header">
+                          
+                            <h4 id="contactUs-h4">Contact Us</h4>
+                          </div>
+                          <div class="modal-body">
+                            <section id="contact">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-md-5 col-sm-5">
+                                    <div class="form-group">
+                                      <label>Name: </label>
+                                      <input class="form-control" type="text" id="contactName" value="" placeholder="Enter Name">
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Email: </label>
+                                      <input class="form-control" type="text" id="contactEmail" value="" placeholder="Enter Email">
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Message: </label>
+                                      <textarea class="form-control" id="contactMessage" value="" placeholder="Enter Message" rows="6"></textarea>
+                                    </div>
+                                    <button id="contact-submit-button" class="btn btn-default" style="padding: 15px" onClick="contactClick()">Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                          </div>
+                       
+                        </div>
+                     
+                  </div>
+              
+                 <!-- The contact us modal ends-->
+              
               <!--Toast Messages Markup -->
                 <div id="toast"  class="mdl-js-snackbar mdl-snackbar">
                     <div class="mdl-snackbar__text" ></div>
@@ -91,31 +131,50 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrapValidator.min.js"></script> 
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+   
     <script src="js/indexFirebase.js"></script> 
  
   </body>
     
     <script type="text/javascript">
         var teamButton = document.getElementById("teamButton");
-        var modal = document.getElementById('myModal');
+        var modalTeam = document.getElementById('team-image-modal');
         var modalImg = document.getElementById("img01");
+        var contactButton = document.getElementById("contactButton");
+        var contactModal = document.getElementById('contact-us-modal');
+       
         var captionText = document.getElementById("caption");
         var indexSignUp = document.getElementById("index-signup");
         
         teamButton.addEventListener("click", function(){
-             modal.style.display = "block";
-//            modalImg.src = "../images/bus2.jpg";
+             modalTeam.style.display = "block";
         });
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        var spanTeamModal = document.getElementsByClassName("closeTeamModal")[0];
 
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function() { 
-            modal.style.display = "none";
+        spanTeamModal.onclick = function() { 
+            modalTeam.style.display = "none";
             
         }
+       
+        
+        //CONTACT MODAL JS
+        contactButton.addEventListener("click", function(){
+             contactModal.style.display = "block"; 
+        });
+        
+          var spanContactModal = document.getElementsByClassName('closeContactUs')[0];
+
+              spanContactModal.onclick = function() {
+              contactModal.style.display = "none";
+
+              }
+              
+              
+        //CONTACT MODAL JS ENDS
         
          indexSignUp.onclick = function(){
          window.location = "/login";
