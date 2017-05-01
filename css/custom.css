@@ -144,6 +144,7 @@ h4{
 }
 #login-button {
 	padding: 6px 18px;
+    
 }
 .center{
     font-size: 15px;
@@ -197,6 +198,7 @@ h4{
     border-radius: 8px;
     font-family: "Arial", Times;
     font-size: 12px;
+    font-weight: 600;
 }
 .btn: hover{
     text-decoration: none;
